@@ -1,3 +1,4 @@
+using System.Linq;
 using api.Hubs;
 using api.Models;
 using Microsoft.AspNetCore.SignalR;
@@ -22,7 +23,7 @@ namespace dotnetcoreSignalR.Services {
             SubscribeChange ();
         }
         private void SubscribeChange () {
-
+           var command = _context.User.Select(users=>users.Name)
         }
     }
 }
